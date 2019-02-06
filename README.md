@@ -34,7 +34,7 @@ We can start training the filters, also called 'weights' or 'kernels', by adding
 ...and the output image ends up looking quite similar to the input image. 
 ![output 3 image](/Network_03/output1e4.gif "convolutional layer mural evolution")
 
-What we would expect from the filters is that the resulting background pixels should all average very closely to (255, 255, 255). Then, the pixels in the red circle should be (255, 0, 0)... and so forth. In fact, if we look at the pixel values at the very center of the red circle, we see the values from filters 1, 4, 7, and 10, which become the red channel in the output, converge to an average of 250. The pixel at that spot actually has the value (250, 8, 6).
+What we would expect from the filters is that the resulting background pixels should all average very closely to (255, 255, 255). Then, the pixels in the red circle should be (255, 0, 0)... and so forth. In fact, if we look at the pixel values at the very center of the red circle, we see the values from filters 1, 4, 7, and 10, which become the red channel in the output, converge to an average of 250. The pixel at that spot actually has the value (250, 8, 6) after 1,000 steps of training and an initial value of (74, -68, -6).
 ![chart image](/Network_03/chart1.png "training pixels on simple image")
 
 **the learning rate**
@@ -46,20 +46,20 @@ In the 2 charts above, the learning rates were increased 100-fold. The first lea
 
 **can the model learn to draw**
 
-What would happen if we made the image a little more complicated. At least complicated in the sense that some different edges (straight) and corners are introduced, and we introduce them so that they overlay the original circles? The model basically learns to produce a similar output, at the same rate as when the simpler input was provided. The difference in the loss value is larger when fed the more complicated image, but this seems to due to the greater number of edges in the latter image. The output images are fuzzy at edges in pictures. More edges leads to more fuzziness, which leads to higher loss value. We used the same learning rate (learning rate = 0.0001) as shown in the similar animations above. 
+What would happen if we made the image a little more complicated. At least complicated in the sense that some different edges (straight) and corners are introduced, and we introduce them so that they overlay the original circles? The model basically learns to produce a similar output, at the same rate as when the simpler input was provided. The difference in the loss value is larger when fed the more complicated image, but this seems to due to the greater number of edges in the latter image. The output images are fuzzy at edges in pictures. More edges leads to more fuzziness, which leads to higher loss value. We used the same learning rate here (learning rate = 0.0001) as shown in the similar animations above, and will stick with that value unless noted.
 
 ![Conv3 image 3](/Network_03/conv1e4compl.gif "convolutional layer mural evolution")
 ![Ouput image 3](/Network_03/output1e4compl.gif "more complicated input")
 
 To my eyes, it looks like the intermediate colors hang on a little longer. However, that's just my eyes (and yours?). When plotted on a graph, the convergence is nearly identical. Trust me and I'll save your bandwidth. 
 
-Anyway, we shouldn't lose focus on learning rates. We want to see if we can gain insights on how the convolutional layers are learning. Thus far it's been pretty simple. We can step it up by asking the model to morph the colors. What happens if the input image is different from the output image? The model still seems to be able to shift primary colors around. The loss ends up with a much higher value, which does go away with a more optimal learning rate.
+Anyway, we shouldn't lose focus on learning rates. We want to see if we can gain insights on how the convolutional layers are learning. Thus far it's been pretty simple. We can step it up by asking the model to morph the pictures. What happens if the input image is different from the output image? The model still seems to be able to shift primary colors around. The loss ends up with a much higher value, which does go away with a more optimal learning rate.
 
 ![Conv3 image 4](/Network_03/conv1e4m1.gif "convolutional layer evolution during morph")
 ![Ouput image 4](/Network_03/output1e4m1.gif "morph primary colors")
 
 
-The bigger difference comes when the model is asked to not just change colors, but to add edges into the image that were not present in the input. When the input is the simple image and the target is the more complicated image. The model indicates that it has reached it's limit. It does not seem to have the capacity to morph between non-contiguous colors and edges.
+The bigger difference comes when the model is asked to not just change colors, but to add edges into the image that were not present in the input. When the input is the simple image and the target is the more complicated image. The model indicates that it has reached it's limit. It does not seem to have the capacity to morph between non-contiguous colors and new edges.
 
 ![Conv3 image 5](/Network_03/conv1e4m2.gif "convolutional layer evolution during edge morph")
 ![Ouput image 5](/Network_03/output1e4m2.gif "morph edges")
