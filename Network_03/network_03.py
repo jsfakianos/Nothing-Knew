@@ -21,11 +21,15 @@ class network03():
                                     dtype=tf.float32)
         self.conv1_weights = tf.get_variable(name=myScope+"_conv1_weights",
                                              shape=[6,6,3,filters])
-        self.conv1 = tf.nn.conv2d(input=self.input,
-                                  filter=self.conv1_weights,
-                                  strides=[1,1,1,1],      # strides are [batch, height, width, channels]
-                                  padding="SAME",
-                                  name=myScope+"_conv1")
+        self.conv1_raw = tf.nn.conv2d(input=self.input,
+                                      filter=self.conv1_weights,
+                                      strides=[1,1,1,1],      # strides are [batch, height, width, channels]
+                                      padding="SAME",
+                                      name=myScope+"_conv1")
+
+        self.conv1_bias = tf.constant(0.1, shape=[filters])
+        self.conv1 = tf.nn.relu(tf.nn.bias_add(value=self.conv1_raw,
+                                    bias=self.conv1_bias))
 
         # split the filters into 4 different sets, a number divisible by 3, a set of images for each channel (RGB)
         # allows splitting [1, 136, 136, 12] into 4x[1, 136, 136, 3]
