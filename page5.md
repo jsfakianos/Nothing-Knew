@@ -10,7 +10,7 @@ Though, here too, by adding deeper layers we are likely building a bulldozer whe
 ![Conv image 2](/Network_04/conv4d_01.gif "convolution layer mural evolution with bias and activation")
 ![Output image 2](/Network_04/output4d.gif "output image with bias and activation")
 
-Not only is the result not very good, the model is using a lot more time and energy to train the not-so-good model. Even if your goal is not to create models that are scalable to the point that it can detect whether you and the billions of other Earthlings will "like" the next ad that you are forced to pay to download onto a phone or desktop, it's good form to think about what you are doing and how efficiently you are doing it. 
+Not only is the result not very good, the model is using a lot more time and energy to train the not-so-good model. Even if your goal is not to create models that are scalable to the point that it can detect whether you and the billions of other Earthlings will "like" the next ad ~~that you are forced to pay to download onto a phone or desktop~~, it's good form to think about what you are doing and how efficiently you are doing it. 
 
 So, how can we improve the efficency of our model?
 
