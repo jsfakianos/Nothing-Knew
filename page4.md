@@ -6,7 +6,7 @@
 ![Conv image 2](/Network_04/conv4c_01.gif "convolution layer mural evolution with bias and activation")
 ![Output image 2](/Network_04/output4c.gif "output image with bias and activation")
 
-With 4 layers the deep learning is able to bridge the new structure across the red and green circles and reaches further outward from the blue circle. But it's just not there. 
+With 4 layers the deeper learner is able to bridge the new structure across the red and green circles and reaches further outward from the blue circle. But it's just not there. 
 
 Can you identify why the model is unable to accurately draw the newer image? 
 
