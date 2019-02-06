@@ -10,6 +10,6 @@ With 4 layers the deeper learner is able to bridge the new structure across the 
 
 Can you identify why the model is unable to accurately draw the newer image? 
 
-A clue is in the way the model is drawing the rectangles. It uses concentric arcs to draw a line. So far, it has only learned to draw circles. The straight edges and corners are new to the model. When given a deeper capacity to improvise, it uses what it has learned creatively, literally. It stacks the arcs to give an approximation of a rectangle. It also adds another shrinking cricle in near the edge of the rectangle that overlaps with the original circles. 
+A clue is in the way the model is drawing the rectangles. It uses concentric arcs to draw a line. So far, it has only learned to draw circles. The straight edges and corners are new to the model. When given a deeper capacity to improvise, it uses what it has learned creatively, literally. It stacks the arcs to give an approximation of a rectangle. It also adds another shrinking circle near the proximal edge of the rectangle in a nod to the fact that it knows there is something different there. 
 
 Shall I continue... [add another layer.](./page5.md)
