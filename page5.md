@@ -14,6 +14,10 @@ Not only is the result not very good, the model is using a lot more time and ene
 
 So, how can we improve the efficiency of our model?
 
+Just to remind you, the model is capable of generating a clean, crisp image. 
+
+![Output image 3](/Network_04/output7.gif "output image with bias and activation")
 
 
+[Move forward to the next step in improving the network.](./page6.md)
 
