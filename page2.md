@@ -19,7 +19,7 @@ In the images below, the training was carried out for 10,000 steps and the gif i
 
 Maybe the reason that the model cannot figure it out is that the capacity of its neural network is too small. The idea behind deep learning is that adding more layers to a neural network allows learning to be more complex and robust. So, let's deepen our model and see if that allows it to add the new edges. 
 
-The first convolution layer will now feed into another convolution layer, and the output viewed with the deeper learning capacity. 
+The first convolution layer will now feed into another convolution layer, and the output viewed with it's deeper learning capacity. 
 
 ![Conv image 2](/Network_04/conv4a_01.gif "convolution layer mural evolution with bias and activation")
 ![Output image 2](/Network_04/output4a.gif "output image with bias and activation")

@@ -6,9 +6,9 @@ So that the old professor doesn't get upset, let's take off our cummerbund and b
 
 We will add a pooling layer, which either takes the average or the max value from a group of neighboring pixels. The layer would normally have more than one intended function. 
 
-First, to decrease the size of the convolved images by pooling pixels. This lessens the computation load by decreasing the number of parameters and is thus a positive feature of the convolution layer compared to the fully connected neural network layer. Though, consistent with our desire to see the effects on our image, we pool the layers, but use a stride that leaves layer at the same size. This essentially negates the first intented function of pooling. 
+First, to decrease the size of the convolved images by pooling pixels. This lessens the computation load by decreasing the number of parameters and is thus a positive feature of the convolution layer compared to the fully connected neural network layer. Though, consistent with our desire to see the effects on our image, we pool the layers, but use a stride that leaves the layer at the same size. This essentially negates the first intended function of pooling. 
 
-Secondly, the pooling layer provides a means to recognize shapes in different positions of the image. This function may help in recognizing edges that were not initially trained.
+Second, the pooling layer provides a means to recognize shapes in different positions of the image. This function may help in recognizing edges that were not initially trained. Pooling can also be though of as a generalizer. It tries to make what it has learned applicable to general observations. Curiously, this can be seen in the space between the red and blue circles. 
 
 Here are the results of network 5. They might be compared to the [3 convolution layer network](./page3.md) that did not employ pooling (the output images are provided side-by-side). 
 
@@ -19,7 +19,7 @@ Here are the results of network 5. They might be compared to the [3 convolution 
 
 The images in the networks with pooling layers exhibit blurred convolutions, but the final output is quite crisp. 
 
-The images also compare favorably to the ["Tuxedo milking the cow"](./page5.md) images. Thus, revealing that we have reduced out computations considerably, moving from 22,032 trainable parameters per step to 11,664 trainable parameters per step, yet still improved the final output of the network.
+The images also compare favorably to the ["Tuxedo milking the cow"](./page5.md) images. Thus, revealing that we have reduced computations considerably, moving from 22,032 trainable parameters per step to 11,664 trainable parameters per step, yet still improved the final output of the network. Way to go!, Pooling!
 
 
 
